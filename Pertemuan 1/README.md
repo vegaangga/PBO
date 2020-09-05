@@ -4,7 +4,7 @@
 #### Kelas	: TI-2C
 
 ## output program
-<img src="img/Hasil run.png">
+<img src="img/Hasil Run.png">
 
 Hasil dari identifikasi benda yang dapat saya temukan di sekitar saya untuk dilaporkan sebagai tugas praktikum adalah
 1. Kertas HVS
