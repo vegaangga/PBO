@@ -4,17 +4,17 @@
 #### Kelas	: TI-2C
 
 ## output program
-<img src="img/hasil run.png">
+<img src="img/Hasil run.png">
 
 Hasil dari identifikasi benda yang dapat saya temukan di sekitar saya untuk dilaporkan sebagai tugas praktikum adalah
 1. Kertas HVS
-<img src="img/hvs.jpeg">
+<img src="img/Hvs.jpeg">
 2. Kertas Folio
-<img src="img/folio.jpeg">
+<img src="img/Folio.jpeg">
 3. Amplop
-<img src="img/amplop.jpeg">
+<img src="img/Amplop.jpeg">
 4. Pensil
-<img src="img/pensil.jpeg">
+<img src="img/Pensil.jpeg">
 
 ## Penjelasan pada program
 1. Kertas.java
