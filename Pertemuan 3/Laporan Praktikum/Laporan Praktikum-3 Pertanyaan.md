@@ -31,6 +31,6 @@ dan	pinjam/tarik().
 7. Kapan	menggunakan	parameter	dengan	passsing	parameter?
 * jika terdapat inputan
 8. Apa	perbedaan	atribut	class	dan	instansiasi	atribut?
-* atribut merupakan mendeskripsikan ciri
+* atribut class merupakan variabel yang digunakan untuk menjadi ciri suatu object sedangkan intansiai atribut merupakan proses pembuatan atribut
 9. Apa	perbedaan	class	method	dan	instansiasi	method?
-* method merupakan
+* method class merupakan pekerjaan atau kegiatan yang dapat digunakan pada object sedangkan instansiasi method merupakan proses pembuatan nya.
