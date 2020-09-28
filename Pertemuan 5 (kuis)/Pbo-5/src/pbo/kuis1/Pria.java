@@ -3,9 +3,7 @@ package pbo.kuis1;
 
 
 public class Pria extends Manusia{
-    private String namaIstri; 
-    
-    private Wanita istri;
+   private Wanita istri;
     
     public Pria(){
         
@@ -16,32 +14,6 @@ public class Pria extends Manusia{
         this.istri = istri;
     }
 
-    
-    public String getNamaIstri() {
-        return namaIstri;
-    }
-
-    public void setNamaIstri(String namaIstri) {
-        this.namaIstri = namaIstri;
-    }
-
-    public Wanita getIstri() {
-        return istri;
-    }
-
-    public void setIstri(Wanita istri) {
-        this.istri = istri;
-    }
-
-    public int getUmur() {
-        return umur;
-    }
-
-    public void setUmur(int umur) {
-        this.umur = umur;
-    }
-
-   
     public String info(){
         super.info();
         String info ="Data Pria: \n";
