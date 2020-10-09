@@ -1,24 +1,26 @@
 
 package pbo.pkg6.tugas;
 
-public class Dosen extends Pegawai {
+public class Dosen extends Pegawai{
+ 
+    private int jumlahSKS;
+    private final int TARIF_SKS = 120000;
     
-    public int jumlahSKS;
-    public int tarifSKS;
-    
-    private Dosen (String nip, String nama, String alamat) {
-        super.nip = nip;
-        super.nama = nama;
-        super.alamat = alamat;
+    public Dosen(){
+        
     }
-   
-    public void setJumlahSKS(int jumlahSKS) {
-        this.jumlahSKS = jumlahSKS;
-    }
-
-    public void setTarifSKS(int tarifSKS) {
-        this.tarifSKS = tarifSKS;
+ 
+    public Dosen(String nip, String nama, String alamat) {
+        super(nip, nama, alamat);
     }
     
+    public void setSKS(int SKS){
+        this.jumlahSKS = SKS;
+    }
     
+    @Override
+    public int getGaji(){
+        int total_gaji = jumlahSKS*TARIF_SKS;
+        return total_gaji+super.getGaji();
+    }
 }
