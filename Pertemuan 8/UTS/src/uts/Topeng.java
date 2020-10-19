@@ -11,9 +11,7 @@ public class Topeng extends Kerajinan{
 
     
     
-    public Ornamen getOrnamen() {
-        return ornamen;
-    }
+    
     public void buatKerajinan(){
         super.harga = 1500000;
     }
