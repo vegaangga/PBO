@@ -9,7 +9,7 @@ public class PascaSarjana extends Mahasiswa implements ICumlaude, IBerprestasi {
 
     @Override
     public void lulus() {
-        System.out.println("Aku mahasiswa,namaku Elok");
+        System.out.println("Aku mahasiswa,namaku" + this.nama);
         System.out.println("Aku berkuliah diPolinema");
         System.out.println("Aku sudah menyelesaikan THESIS");
     }

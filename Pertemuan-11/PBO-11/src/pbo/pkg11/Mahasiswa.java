@@ -8,13 +8,13 @@ public class Mahasiswa implements ICumlaude {
         this.nama=nama;
     }
     public void kuliahDiKampus(){
-        System.out.println("Aku mahasiswa,Namaku Rifkie Nurdian " + this.nama);
+        System.out.println("Aku mahasiswa,Namaku " + this.nama);
         System.out.println("Aku berkuliah di Polinema");
     }
 
     @Override
     public void lulus() {
-        System.out.println("Aku mahasiswa,Namaku Rifkie");
+        System.out.println("Aku mahasiswa,Namaku " + this.nama);
     }
 
     @Override

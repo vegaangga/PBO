@@ -9,7 +9,7 @@ public class Sarjana extends Mahasiswa implements ICumlaude,IBerprestasi {
 
     @Override
     public void lulus() {
-        System.out.println("Aku mahasiswa,Namaku Rifkie");
+        System.out.println("Aku mahasiswa,Namaku "+ this.nama);
         System.out.println("Aku berkuliah di Polinema");
         System.out.println("Aku sudah menyelesaikan SKRIPSI");
     }

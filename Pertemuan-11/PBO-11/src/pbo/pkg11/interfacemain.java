@@ -14,9 +14,10 @@ public class interfacemain {
     public static void main(String[] args) {
         Rektor pakrektor = new Rektor();
         
-        Mahasiswa mahasiswaBiasa = new Mahasiswa("Vega");
-        Sarjana SarjanaCumlaude = new Sarjana("Brian");
+        Mahasiswa mahasiswaBiasa = new Mahasiswa("Charlie");
+        Sarjana SarjanaCumlaude = new Sarjana("Dini");
         PascaSarjana masterCumlaude = new PascaSarjana("Elok");
+        
         
         pakrektor.beriSertifikatCumlaude(mahasiswaBiasa);
         pakrektor.beriSertifikatCumlaude(SarjanaCumlaude);
