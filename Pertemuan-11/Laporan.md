@@ -72,3 +72,4 @@ seperti nama, suara, warnabulu dan jumlah kaki.
 > Sama dengan sebelumnya Class ini merupakan turunan dari classParentnya yaitu class Binatang. Pada class ini juga terdapat 2 implements dari class Interface herbivora dan karnivora. sedangkan atributnya dan method sesuai dengan class diagram yang diberikan.
 
 > Class Diagaram
+<img src="image/ClassDiagram.png">
