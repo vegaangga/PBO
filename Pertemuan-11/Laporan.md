@@ -46,6 +46,7 @@ mawapres pada objek sarjanaCumlaude.
 > Jawab: 
 <img src="image/Percobaan2-3.png">
 F. Tugas
+
 * Terdapat sebuah UML diagram dari sistem yang mengidentifikasi tentang karakteristik dan jenis makanan dari beberapa binatang, seperti gambar
 dibawah ini. Singa hanya makan jenis daging yang tergolong sebagai jenis Karnivora, sedangkan Keledai termasuk binatang Herbivora karena hanya
 mengkonsumsi jenis tumbuhan. Sedangkan untuk Gorilla dapat mengkonsumsi makanan dari kedua jenis tersebut, dapat disebut dengan omnivora dan
@@ -70,6 +71,9 @@ seperti nama, suara, warnabulu dan jumlah kaki.
 6. Subclass Gorilla
 <img src="image/T-Gorilla.png">
 > Sama dengan sebelumnya Class ini merupakan turunan dari classParentnya yaitu class Binatang. Pada class ini juga terdapat 2 implements dari class Interface herbivora dan karnivora. sedangkan atributnya dan method sesuai dengan class diagram yang diberikan.
+
+7. Output
+<img src="image/T-Output.png">
 
 > Class Diagaram
 <img src="image/ClassDiagram.png">
