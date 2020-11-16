@@ -5,9 +5,7 @@
 
 ## Laporan Pertemuan 12
  
-4.1 Output Percobaan 1 - Bentuk Dasar Polimorfisme
-
-<img src="image/Prak1_Output.png">
+4.1 Percobaan 1 - Bentuk Dasar Polimorfisme
 
 4.2 Pertanyaan
 1. Class apa sajakah yang merupakan turunan dari class Employee?
@@ -34,7 +32,7 @@ menyebabkan error?
 > Polimorfisme adalah,  ketika ada suatu objek yang dideklarasikan dari super class, maka objek tersebut bisa diinstansiasi sebagai objek dari subclass
 
 5.1 Output Percobaan 2 - Virtual method invocation
-> <img src="image/Prak2_Output.png">
+> <img src="image/Prak2-Output.png">
 
 5.2 Pertanyaan
 1. Perhatikan class Tester2 di atas, mengapa pemanggilan
@@ -48,8 +46,7 @@ pEmp.getEmployeeInfo() tidak?
 disebut virtual?
 > Virtual method invocation adalah ketika ada pemanggilan overriding method dari suatu objek polimorfisme. Disebut virtual karena antara method yang dikenali oleh compiler dan method yang dijalankan oleh JVM berbeda.
 
-6.1 Output Percobaan 3 - Heterogeneous Collection
-<img src="image/Prak1_Output.png">
+6.1 Percobaan 3 - Heterogeneous Collection
 
 6.2 Pertanyaan
 1. Perhatikan array e pada baris ke-8, mengapa ia bisa diisi dengan objekobjek dengan tipe yang berbeda, yaitu objek pEmp (objek dari
@@ -67,7 +64,7 @@ ElectricityBilling) ?
 > Karena class Employee dan klass ElectricityBill tidak berkesinambungan
 
 7.1 Output Percobaan 4 - Argumen Polimorfisme, indtanceof, dan casting objek
-<img src="image/Prak4-Output.png">
+> <img src="image/Prak4-Output.png">
 
 7.2 Pertanyaan
 1. Perhatikan class Tester4 baris ke-7 dan baris ke-11, mengapa
