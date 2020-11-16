@@ -88,16 +88,22 @@ dalam objek eb yang bertipe ElectricityBill ?
 >
 
 -8. Tugas
-<img src="image/T-Output.png">
+> <img src="image/T-Output.png">
+
 a. Class Zombie
-<img src="image/T-Zombie.png">
+> <img src="image/T-Zombie.png">
+
 b. Class WalkingZombie
-<img src="image/T-WalkingZombie.png">
+> <img src="image/T-WalkingZombie.png">
+
 c. Class JumpingZombie
-<img src="image/T-JumpingZombie1.png">
+> <img src="image/T-JumpingZombie1.png">
+
 d. Class Interface Destroyable
-<img src="image/T-Destroyable.png">
+> <img src="image/T-Destroyable.png">
+
 e. Class Barrier
-<img src="image/T-Barrier.png">
+> <img src="image/T-Barrier.png">
+
 f. Class Plant
-<img src="image/T-Plant.png">
+> <img src="image/T-Plant.png">
