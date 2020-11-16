@@ -65,7 +65,7 @@ ElectricityBilling) ?
 > 
 
 7.1 Output Percobaan 4 - Argumen Polimorfisme, indtanceof, dan casting objek
-<img src="image/Prak1_Output.png">
+<img src="image/Prak4-Output.png">
 
 7.2 Pertanyaan
 1. Perhatikan class Tester4 baris ke-7 dan baris ke-11, mengapa
@@ -87,16 +87,17 @@ diperlukan ? Mengapa objek p yang bertipe Payable harus di-casting ke
 dalam objek eb yang bertipe ElectricityBill ?
 >
 
-8. Tugas
-
+-8. Tugas
+<img src="image/T-Output.png">
 a. Class Zombie
-
+<img src="image/T-Zombie.png">
 b. Class WalkingZombie
-
+<img src="image/T-WalkingZombie.png">
 c. Class JumpingZombie
-
+<img src="image/T-JumpingZombie1.png">
 d. Class Interface Destroyable
-
+<img src="image/T-Destroyable.png">
 e. Class Barrier
-
+<img src="image/T-Barrier.png">
 f. Class Plant
+<img src="image/T-Plant.png">
