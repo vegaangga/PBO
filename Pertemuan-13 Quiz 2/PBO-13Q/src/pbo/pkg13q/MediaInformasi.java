@@ -34,7 +34,7 @@ public class MediaInformasi implements Penerbit{
     
     public void tahunBerdiri(int tahun){
         
-        System.out.println("Penerbit ini berdiri tahun: " + tahun + ", dan sudah berdiri: " + (this.getTahunSekarang(tahunSekarang)- tahun) + "\n");
+        System.out.println("Penerbit ini berdiri tahun: " + tahun + ", dan sudah berdiri: " + (this.getTahunSekarang(tahunSekarang)- tahun) + " tahun \n" );
         
     }
 

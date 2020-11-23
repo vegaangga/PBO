@@ -12,9 +12,9 @@ package pbo.pkg13q;
 public class TestMain {
     public static void Proses (MediaInformasi med){
         if (med instanceof Majalah){
-            System.out.println("Majalah adalah media informasi");
+            System.out.println("Majalah adalah media informasi " + "\n");
         } else if (med instanceof Buku){
-        System.out.println("Buku adalah media informasi ");
+        System.out.println("Buku adalah media informasi " + "\n");
         } else{
             System.out.println("Kategori belum diketahui");
         }
