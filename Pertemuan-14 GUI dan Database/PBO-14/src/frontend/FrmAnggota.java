@@ -15,62 +15,69 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
-public class FrmKategori extends javax.swing.JFrame {
+public class FrmAnggota extends javax.swing.JFrame {
 
     /**
      * Creates new form FrmBuku
      */
-    public FrmKategori() {
-        initComponents();
+    public FrmAnggota() {
+       initComponents();
         tampilkanData();
+       
         kosongkanForm();
     }
     
     public void kosongkanForm(){
-        txtIdKategori.setText("0");
-        txtNama.setText("");
-        txtKeterangan.setText("");
+        txtIdAnggota.setText("0");
+        txtNamaAnggota.setText("");
+        txtAlamat.setText("");
+        txtTelepon.setText("");
     }
     
+       
     public final void tampilkanData(){
-        String[] kolom = {"ID", "Nama", "Keterangan"};
-        ArrayList<Kategori> list = new Kategori().getAll();
-        Object rowData[] = new Object[3];
+       String[] kolom = {"ID", "Nama", "Alamat", "Telepon"};
+        ArrayList<Anggota> list = new Anggota().getAll();
+        Object rowData[] = new Object[4];
         
-        tblKategori.setModel(new DefaultTableModel(new Object[][] {}, kolom));
+        tblAnggota.setModel(new DefaultTableModel(new Object[][] {}, kolom));
         
-        for (Kategori kat : list) {
-            rowData[0] = kat.getIdKategori();
-            rowData[1] = kat.getNama();
-            rowData[2] = kat.getKeterangan();
+        for (Anggota ang : list) {
+            rowData[0] = ang.getIdAnggota();
+            rowData[1] = ang.getNama();
+            rowData[2] = ang.getAlamat();
+            rowData[3] = ang.getTelepon();
         
-            ((DefaultTableModel)tblKategori.getModel()).addRow(rowData);
+            ((DefaultTableModel)tblAnggota.getModel()).addRow(rowData);
         }
     }
     
     public final void cari(String keyword){
-        String[] kolom = {"ID", "Nama", "Keterangan"};
-        ArrayList<Kategori> list = new Kategori().search(keyword);
-        Object rowData[] = new Object[3];
+       String[] kolom = {"ID", "Nama", "Alamat", "Telepon"};
+        ArrayList<Anggota> list = new Anggota().search(keyword);
+        Object rowData[] = new Object[4];
         
-        tblKategori.setModel(new DefaultTableModel(new Object[][] {}, kolom));
+        tblAnggota.setModel(new DefaultTableModel(new Object[][] {}, kolom));
         
-        for (Kategori kat : list) {
-            rowData[0] = kat.getIdKategori();
-            rowData[1] = kat.getNama();
-            rowData[2] = kat.getKeterangan();
+        for (Anggota ang : list) {
+            rowData[0] = ang.getIdAnggota();
+            rowData[1] = ang.getNama();
+            rowData[2] = ang.getAlamat();
+            rowData[3] = ang.getTelepon();
         
-            ((DefaultTableModel)tblKategori.getModel()).addRow(rowData);
+            ((DefaultTableModel)tblAnggota.getModel()).addRow(rowData);
         }
     }
     
-    public boolean checkInput(String nama, String keterangan){
+    public boolean checkInput(String nama, String alamat, String telepon){
         boolean res = true;
-        if(nama.equals("") && keterangan.equals("")){
+        if(nama.equals("") && alamat.equals("") && telepon.equals("")){
             res = false;
         } else if(nama.equals("") ){
             res = false;
-        } else if (keterangan.equals("")) {
+        } else if (alamat.equals("")) {
+            res = false;
+        } else if (telepon.equals("")){
             res = false;
         }
         return res;
@@ -90,18 +97,20 @@ public class FrmKategori extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        txtIdKategori = new javax.swing.JTextField();
-        txtNama = new javax.swing.JTextField();
+        txtIdAnggota = new javax.swing.JTextField();
+        txtNamaAnggota = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        txtKeterangan = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txtAlamat = new javax.swing.JTextField();
+        txtTelepon = new javax.swing.JTextField();
         btnSimpan = new javax.swing.JButton();
         btnTambahBaru = new javax.swing.JButton();
         btnHapus = new javax.swing.JButton();
         btnCari = new javax.swing.JButton();
         txtCari = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tblKategori = new javax.swing.JTable();
+        tblAnggota = new javax.swing.JTable();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -118,27 +127,35 @@ public class FrmKategori extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("ID Kategori");
+        jLabel1.setText("ID Anggota");
 
-        txtIdKategori.addActionListener(new java.awt.event.ActionListener() {
+        txtIdAnggota.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIdKategoriActionPerformed(evt);
+                txtIdAnggotaActionPerformed(evt);
             }
         });
 
-        txtNama.addActionListener(new java.awt.event.ActionListener() {
+        txtNamaAnggota.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNamaActionPerformed(evt);
+                txtNamaAnggotaActionPerformed(evt);
             }
         });
 
-        jLabel3.setText("Nama Kategori");
+        jLabel3.setText("Nama Anggota");
 
-        jLabel4.setText("Keterangan");
+        jLabel4.setText("Alamat");
 
-        txtKeterangan.addActionListener(new java.awt.event.ActionListener() {
+        jLabel5.setText("Telepon");
+
+        txtAlamat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtKeteranganActionPerformed(evt);
+                txtAlamatActionPerformed(evt);
+            }
+        });
+
+        txtTelepon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTeleponActionPerformed(evt);
             }
         });
 
@@ -176,7 +193,7 @@ public class FrmKategori extends javax.swing.JFrame {
             }
         });
 
-        tblKategori.setModel(new javax.swing.table.DefaultTableModel(
+        tblAnggota.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -187,7 +204,7 @@ public class FrmKategori extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(tblKategori);
+        jScrollPane2.setViewportView(tblAnggota);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -196,34 +213,40 @@ public class FrmKategori extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 524, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnTambahBaru)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnHapus)
-                                .addGap(37, 37, 37)
-                                .addComponent(txtCari, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnCari))
-                            .addComponent(btnSimpan)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(346, 346, 346))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel4)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(txtKeterangan, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel1)
-                                    .addGap(41, 41, 41)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txtNama, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtIdKategori, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txtNamaAnggota, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(19, 19, 19)
+                                        .addComponent(jLabel5)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(txtTelepon, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(jLabel1)
+                                        .addGap(34, 34, 34)
+                                        .addComponent(txtIdAnggota, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel4)
+                                        .addGap(33, 33, 33)
+                                        .addComponent(txtAlamat, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnSimpan)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnTambahBaru)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnHapus)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtCari, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnCari)
+                        .addGap(18, 18, 18))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -231,24 +254,23 @@ public class FrmKategori extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(txtIdKategori, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtIdAnggota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
-                    .addComponent(txtKeterangan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(11, 11, 11)
-                .addComponent(btnSimpan)
-                .addGap(13, 13, 13)
+                    .addComponent(txtAlamat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnHapus)
+                    .addComponent(jLabel5)
+                    .addComponent(txtTelepon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3)
+                    .addComponent(txtNamaAnggota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSimpan)
                     .addComponent(btnTambahBaru)
+                    .addComponent(btnHapus)
                     .addComponent(txtCari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCari))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -257,50 +279,57 @@ public class FrmKategori extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
    
-    private void txtIdKategoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdKategoriActionPerformed
+    private void txtIdAnggotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdAnggotaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtIdKategoriActionPerformed
+    }//GEN-LAST:event_txtIdAnggotaActionPerformed
 
-    private void txtNamaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNamaActionPerformed
+    private void txtNamaAnggotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNamaAnggotaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNamaActionPerformed
+    }//GEN-LAST:event_txtNamaAnggotaActionPerformed
 
-    private void txtKeteranganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKeteranganActionPerformed
+    private void txtAlamatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAlamatActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtKeteranganActionPerformed
+    }//GEN-LAST:event_txtAlamatActionPerformed
+
+    private void txtTeleponActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTeleponActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTeleponActionPerformed
 
     private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
-         Kategori kat = new Kategori();
+        Anggota ang = new Anggota();
         
-        boolean res = checkInput(txtNama.getText(), txtKeterangan.getText());
+        boolean res = checkInput(txtNamaAnggota.getText(), txtAlamat.getText(), txtTelepon.getText());
         
         if(res){
-            kat.setIdKategori(Integer.parseInt(txtIdKategori.getText()));
-            kat.setNama(txtNama.getText());
-            kat.setKeterangan(txtKeterangan.getText());
-            kat.save();
-            txtIdKategori.setText(Integer.toString(kat.getIdKategori()));
+            ang.setIdAnggota(Integer.parseInt(txtIdAnggota.getText()));
+            ang.setNama(txtNamaAnggota.getText());
+            ang.setAlamat(txtAlamat.getText());
+            ang.setTelepon(txtTelepon.getText());
+            ang.save();
+            txtIdAnggota.setText(Integer.toString(ang.getIdAnggota()));
             tampilkanData(); 
         } else {
-             JOptionPane.showMessageDialog(this, "Nama dan keterangan harus diisi!");  
+             JOptionPane.showMessageDialog(this, "Nama, alamat, dan telepon harus diisi!");  
         }
+        
     }//GEN-LAST:event_btnSimpanActionPerformed
 
     private void btnTambahBaruActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahBaruActionPerformed
         // TODO add your handling code here:
-         kosongkanForm();
+        kosongkanForm();
     }//GEN-LAST:event_btnTambahBaruActionPerformed
 
     private void btnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusActionPerformed
         // TODO add your handling code here:
-        if(tblKategori.getSelectionModel().isSelectionEmpty()){
-            JOptionPane.showMessageDialog(this, "Silahkan pilih data yang akan dihapus!");        
+         if(tblAnggota.getSelectionModel().isSelectionEmpty()){
+            JOptionPane.showMessageDialog(this, "Silahkan pilih data yang akan dihapus!");
             kosongkanForm();
-        } else {
-            DefaultTableModel model = (DefaultTableModel)tblKategori.getModel();
-            int row = tblKategori.getSelectedRow();
-            Kategori kat = new Kategori().getById(Integer.parseInt(model.getValueAt(row, 0).toString()));
-            kat.delete();
+        }else {
+            DefaultTableModel model = (DefaultTableModel)tblAnggota.getModel();
+            int row = tblAnggota.getSelectedRow();
+            
+            Anggota ang = new Anggota().getById(Integer.parseInt(model.getValueAt(row, 0).toString()));
+            ang.delete();
             kosongkanForm();
             tampilkanData();
         }
@@ -309,7 +338,8 @@ public class FrmKategori extends javax.swing.JFrame {
     private void btnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCariActionPerformed
         // TODO add your handling code here:
         if(txtCari.getText().equals("")){
-            JOptionPane.showMessageDialog(this, "Silahkan masukkan keyword pencarian!");        
+            JOptionPane.showMessageDialog(this, "Silahkan masukkan keyword pencarian!");   
+            tampilkanData();
         } else {
             cari(txtCari.getText());
         }
@@ -319,6 +349,8 @@ public class FrmKategori extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCariActionPerformed
 
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -336,21 +368,27 @@ public class FrmKategori extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmKategori.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmAnggota.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmKategori.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmAnggota.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmKategori.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmAnggota.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmKategori.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmAnggota.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmKategori().setVisible(true);
+                new FrmAnggota().setVisible(true);
             }
         });
     }
@@ -363,13 +401,15 @@ public class FrmKategori extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable tblKategori;
+    private javax.swing.JTable tblAnggota;
+    private javax.swing.JTextField txtAlamat;
     private javax.swing.JTextField txtCari;
-    private javax.swing.JTextField txtIdKategori;
-    private javax.swing.JTextField txtKeterangan;
-    private javax.swing.JTextField txtNama;
+    private javax.swing.JTextField txtIdAnggota;
+    private javax.swing.JTextField txtNamaAnggota;
+    private javax.swing.JTextField txtTelepon;
     // End of variables declaration//GEN-END:variables
 }
