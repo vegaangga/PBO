@@ -16,12 +16,12 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public class FrmPeminjaman extends javax.swing.JFrame {
+public class FrmPeminjaman1 extends javax.swing.JFrame {
 
     /**
      * Creates new form FrmPeminjaman
      */
-    public FrmPeminjaman() {
+    public FrmPeminjaman1() {
         initComponents();
         tampilkanData();
         kosongkanForm();
@@ -43,9 +43,9 @@ public class FrmPeminjaman extends javax.swing.JFrame {
         txtIdBuku.setText("");
         txtIdAnggota.setText("");
         txtJudulBuku.setText("Judul Buku");
-        txtNamaAnggota.setText("Nama Anggota");
-        txtTanggalKembali.setText("");
-        txtTanggalPinjam.setText("");
+        txtIdAnggota.setText(" ");
+        txtTanggalKembali.setDateFormatString("");
+        txtTanggalPinjam.setDateFormatString(" ");
     }
     
     private Anggota cariAnggota(int idAnggota){
@@ -114,8 +114,10 @@ public class FrmPeminjaman extends javax.swing.JFrame {
         txtIdBuku = new javax.swing.JTextField();
         btnCariAnggota = new javax.swing.JButton();
         btnSimpan = new javax.swing.JButton();
+        txtTanggalPinjam = new com.toedter.calendar.JDateChooser();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        txtTanggalKembali = new com.toedter.calendar.JDateChooser();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblPeminjaman = new javax.swing.JTable();
         btnCariBuku = new javax.swing.JButton();
@@ -123,10 +125,6 @@ public class FrmPeminjaman extends javax.swing.JFrame {
         btnHapus = new javax.swing.JButton();
         txtNamaAnggota = new javax.swing.JLabel();
         txtJudulBuku = new javax.swing.JLabel();
-        txtTanggalPinjam = new javax.swing.JTextField();
-        txtTanggalKembali = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -216,9 +214,9 @@ public class FrmPeminjaman extends javax.swing.JFrame {
             }
         });
 
-        jLabel8.setText("yyyy/MM/dd");
+        txtNamaAnggota.setText("iniNama");
 
-        jLabel9.setText("yyyy/MM/dd");
+        txtJudulBuku.setText("iniNama");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -230,53 +228,57 @@ public class FrmPeminjaman extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane2)
                         .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(48, 48, 48)
+                        .addComponent(txtIdPinjam, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(179, 398, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel1))
-                                .addGap(36, 36, 36)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtIdPinjam, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(txtIdAnggota, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(6, 6, 6)
+                                        .addComponent(txtIdBuku))
+                                    .addGroup(layout.createSequentialGroup()
                                         .addGap(18, 18, 18)
-                                        .addComponent(btnCariAnggota)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel3))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel4)
-                                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(txtIdBuku, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtTanggalPinjam, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(3, 3, 3)
-                                        .addComponent(txtTanggalKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(btnTambahBaru)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnHapus)))
+                                        .addComponent(txtTanggalPinjam, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(38, 38, 38)
+                                .addComponent(txtIdAnggota)))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnCariAnggota)
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnSimpan)
-                                    .addComponent(jLabel8)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(btnCariBuku)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel5))
-                                    .addComponent(jLabel9))))
-                        .addGap(0, 56, Short.MAX_VALUE)
+                                .addComponent(jLabel3))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnCariBuku)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel5)))
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtJudulBuku)
                             .addComponent(txtNamaAnggota))
-                        .addGap(96, 96, 96))))
+                        .addGap(96, 96, 96))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtTanggalKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnSimpan))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnTambahBaru)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnHapus)))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -300,30 +302,22 @@ public class FrmPeminjaman extends javax.swing.JFrame {
                         .addComponent(jLabel5)
                         .addComponent(btnCariBuku)
                         .addComponent(txtJudulBuku)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtTanggalPinjam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel8)))
-                .addGap(14, 14, 14)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtTanggalPinjam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
                     .addComponent(txtTanggalKembali, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnTambahBaru)
-                            .addComponent(btnHapus))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnSimpan)
-                        .addGap(25, 25, 25)))
+                    .addComponent(btnSimpan))
+                .addGap(19, 19, 19)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnTambahBaru)
+                    .addComponent(btnHapus))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -371,12 +365,13 @@ public class FrmPeminjaman extends javax.swing.JFrame {
 
     private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
         // TODO add your handling code here:
-       Peminjaman pen = new Peminjaman();                
-        boolean res = checkInput(txtTanggalPinjam.getText(), txtTanggalKembali.getText());
-
+        Peminjaman pen = new Peminjaman();
+        SimpleDateFormat sdf = new SimpleDateFormat ("yyyy-MM-dd");
+        String date = sdf.format(txtTanggalPinjam.getDate());
+        boolean res = checkInput(txtTanggalPinjam.getDateFormatString(), txtTanggalKembali.getDateFormatString());
         if(res){
-            boolean tglPinjam = isValidDate(txtTanggalPinjam.getText());
-            boolean tglKembali = isValidDate(txtTanggalKembali.getText()) ;
+            boolean tglPinjam = isValidDate(txtTanggalPinjam.getDateFormatString());
+            boolean tglKembali = isValidDate(txtTanggalKembali.getDateFormatString()) ;
             if(tglKembali == false || tglPinjam == false){
                 JOptionPane.showMessageDialog(this, "Format tanggal invalid!"); 
             } else {
@@ -392,8 +387,8 @@ public class FrmPeminjaman extends javax.swing.JFrame {
                     pen.setBuku(newBuku);
                     pen.setAnggota(newAng);
                     pen.setIdPeminjaman(Integer.parseInt(txtIdPinjam.getText()));
-                    pen.setTanggalKembali(txtTanggalKembali.getText());
-                    pen.setTanggalPinjam(txtTanggalPinjam.getText());
+                    pen.setTanggalKembali(txtTanggalKembali.getDateFormatString());
+                    pen.setTanggalPinjam(txtTanggalPinjam.getDateFormatString());
                     pen.save();
                     tampilkanData();
                     kosongkanForm();
@@ -427,16 +422,7 @@ public class FrmPeminjaman extends javax.swing.JFrame {
 
     private void tblPeminjamanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblPeminjamanMouseClicked
         // TODO add your handling code here:
-        DefaultTableModel model = (DefaultTableModel)tblPeminjaman.getModel();
-        int row = tblPeminjaman.getSelectedRow();
         
-        Peminjaman pen = new Peminjaman().getById(Integer.parseInt(model.getValueAt(row, 0).toString()));
-        
-        txtIdPinjam.setText(String.valueOf(pen.getIdPeminjaman()));
-        txtNamaAnggota.setText(pen.getAnggota().getNama());
-        txtJudulBuku.setText(pen.getBuku().getJudul());
-        txtTanggalPinjam.setText(pen.getTanggalPinjam());
-        txtTanggalKembali.setText(pen.getTanggalKembali());
     }//GEN-LAST:event_tblPeminjamanMouseClicked
 
     /**
@@ -456,23 +442,21 @@ public class FrmPeminjaman extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmPeminjaman.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmPeminjaman1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmPeminjaman.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmPeminjaman1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmPeminjaman.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmPeminjaman1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmPeminjaman.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmPeminjaman1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmPeminjaman().setVisible(true);
+                new FrmPeminjaman1().setVisible(true);
             }
         });
     }
@@ -490,8 +474,6 @@ public class FrmPeminjaman extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
@@ -501,7 +483,7 @@ public class FrmPeminjaman extends javax.swing.JFrame {
     private javax.swing.JTextField txtIdPinjam;
     private javax.swing.JLabel txtJudulBuku;
     private javax.swing.JLabel txtNamaAnggota;
-    private javax.swing.JTextField txtTanggalKembali;
-    private javax.swing.JTextField txtTanggalPinjam;
+    private com.toedter.calendar.JDateChooser txtTanggalKembali;
+    private com.toedter.calendar.JDateChooser txtTanggalPinjam;
     // End of variables declaration//GEN-END:variables
 }

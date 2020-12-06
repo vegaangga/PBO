@@ -9,18 +9,21 @@ package frontend;
  *
  * @author Vega
  */
+
 import backend.*;
 
 public class TestPeminjaman {
-    Anggota ang = new Anggota().getById(1);
+    public static void main(String[] args) {
+        Anggota ang = new Anggota().getById(1);
 Buku buk = new Buku().getById(5);
 Peminjaman pen = new Peminjaman(ang, buk, "2000-11-03", "2000-11-10");
 
-//            pen.setTanggalKembali("2021-10-10");
-//            pen.save();
-//               
-//            for(Peminjaman b : new Peminjaman().getAll())
-//            {
-//                System.out.println("IDAnggota: " + b.getAnggota().getIdAnggota() + ", ID Buku: " + b.getBuku().getIdbuku());
-//            }
+//pen.setTanggalKembali("2021-10-10");
+//pen.save();
+    
+for(Peminjaman p : new Peminjaman().getAll())
+{
+System.out.println("IDAnggota: " + p.getAnggota().getIdAnggota() + ", ID Buku: " + p.getBuku().getIdbuku());
+}
+    }
 }

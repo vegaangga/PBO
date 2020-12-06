@@ -14,9 +14,9 @@ import backend.*;
 public class TestKategori {
     public static void main(String[] args)
  {
- Kategori kat1 = new Kategori("Novel", "Koleksi buku novel");
- Kategori kat2 = new Kategori("Referensi", "Buku referensi ilmiah");
- Kategori kat3 = new Kategori("Komik", "Komik anak-anak");
+ //Kategori kat1 = new Kategori("Novel", "Koleksi buku novel");
+ //Kategori kat2 = new Kategori("Referensi", "Buku referensi ilmiah");
+ //Kategori kat3 = new Kategori("Komik", "Komik anak-anak");
 
  // test insert
  // kat1.save();
@@ -24,11 +24,11 @@ public class TestKategori {
  // .save();
 
  // test update
- kat2.setKeterangan("Koleksi buku referensi ilmiah");
- kat2.save();
+ //kat2.setKeterangan("Koleksi buku referensi ilmiah");
+ //kat2.save();
 
  // test delete
- kat3.delete();
+ //kat3.delete();
 
  // test select all
  for(Kategori k : new Kategori().getAll())
@@ -37,6 +37,7 @@ public class TestKategori {
  }
 
  // test search
+     System.out.println("=====Cari=====");
  for(Kategori k : new Kategori().search("ilmiah"))
  {
  System.out.println("Nama: " + k.getNama() + ", Ket: " + k.getKeterangan());
